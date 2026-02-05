@@ -1,44 +1,101 @@
+import Link from "next/link";
+import Image from "next/image";
+
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/#contact" },
+];
+
+const socialLinks = [
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/laura-simons-241b8b9/",
+    icon: "/images/linkedin.png",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/prowinewoman",
+    icon: "/images/instagram.png",
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/laura.simons.967/",
+    icon: "/images/facebook.png",
+  },
+];
+
 export default function Footer() {
   return (
-    <footer className="bg-wine-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="text-xl font-serif font-bold mb-4">Simon's DTC Consulting</h3>
-            <p className="text-wine-200">
-              Wine DTC sales consulting and strategy experts based in Napa, CA.
+    <footer className="bg-navy text-white">
+      <div className="max-w-site mx-auto px-4 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Left column - Contact info */}
+          <div className="space-y-2">
+            <Link href="/" className="font-heading text-lg block">
+              Simons DTC Consulting
+            </Link>
+            <p className="font-body text-sm text-accent-pale-blue">Napa, CA</p>
+            <p className="font-body text-sm">
+              <a
+                href="mailto:laura@simonsdtc.com"
+                className="text-accent-pale-blue hover:text-accent-light-blue transition-colors"
+              >
+                laura@simonsdtc.com
+              </a>
+            </p>
+            <p className="font-body text-sm">
+              <a
+                href="tel:707-927-6096"
+                className="text-accent-pale-blue hover:text-accent-light-blue transition-colors"
+              >
+                707-927-6096
+              </a>
+            </p>
+            <p className="font-body text-xs text-accent-pale-blue mt-6 pt-4">
+              &copy; {new Date().getFullYear()} by SIMONS DTC CONSULTING
             </p>
           </div>
 
+          {/* Right column - Menu + Social */}
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-wine-200">
-              <li>
-                <a href="/services" className="hover:text-white transition-colors">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="/about" className="hover:text-white transition-colors">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="hover:text-white transition-colors">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
+            <h4 className="font-heading text-base font-bold mb-4 tracking-wider">
+              MENU
+            </h4>
+            <nav className="space-y-2 mb-6">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block font-body text-sm text-accent-pale-blue hover:text-accent-light-blue transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
 
-          <div>
-            <h4 className="font-semibold mb-4">Location</h4>
-            <p className="text-wine-200">Napa, California</p>
+            {/* Social icons */}
+            <div className="flex gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                >
+                  <Image
+                    src={social.icon}
+                    alt={social.label}
+                    width={32}
+                    height={32}
+                    className="w-8 h-8 opacity-80 hover:opacity-100 transition-opacity"
+                  />
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
-
-        <div className="mt-12 pt-8 border-t border-wine-800 text-center text-wine-300 text-sm">
-          <p>&copy; {new Date().getFullYear()} Simon's DTC Consulting LLC. All rights reserved.</p>
         </div>
       </div>
     </footer>

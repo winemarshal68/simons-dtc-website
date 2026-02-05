@@ -1,139 +1,217 @@
+import Image from "next/image";
 import Link from "next/link";
+
+const servicesCol1 = [
+  "Club Processing",
+  "Metrics & Analytics",
+  "Corporate Gifting",
+  "Data Segmentation",
+  "Website Content Management",
+  "Staff Training",
+];
+
+const servicesCol2 = [
+  "Club Creation",
+  "eCommerce Platform Migration",
+  "Hospitality Planning",
+  "Virtual Experience Programming",
+  "Subscription & Allocation Creation",
+  "Outbound Sales Programming",
+];
+
+const servicesCol3 = [
+  "DTC Sales",
+  "Club Member Retention",
+  "Email Marketing",
+  "Social Media",
+  "SMS Messaging",
+  "Referral & Loyalty Programs",
+];
 
 export default function Home() {
   return (
-    <div className="pt-20">
+    <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-wine-50 to-white py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-wine-900 mb-6 leading-tight">
-              Elevate Your Wine DTC Sales
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
-              Strategic consulting and proven expertise to drive direct-to-consumer growth for wineries in Napa and beyond.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/contact"
-                className="inline-block bg-wine-700 text-white px-8 py-4 rounded-md hover:bg-wine-800 transition-colors text-center font-medium"
-              >
-                Get Started
-              </Link>
-              <Link
-                href="/services"
-                className="inline-block border-2 border-wine-700 text-wine-700 px-8 py-4 rounded-md hover:bg-wine-50 transition-colors text-center font-medium"
-              >
-                Our Services
-              </Link>
-            </div>
-          </div>
+      <section className="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center">
+        {/* Background image */}
+        <Image
+          src="/images/hero-home.jpg"
+          alt="Wine and cheese"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Gray overlay */}
+        <div className="absolute inset-0 bg-gray-600/40" />
+
+        {/* Content overlay box */}
+        <div className="relative z-10 bg-white/80 px-8 py-12 md:px-16 md:py-16 max-w-[750px] mx-4 text-center">
+          <h1 className="font-heading text-3xl md:text-[52px] md:leading-tight font-bold text-navy-dark mb-6">
+            GROW YOUR DIRECT-TO-CONSUMER BUSINESS
+          </h1>
+          <p className="font-body text-lg md:text-[23px] md:leading-normal text-navy-dark tracking-wide mb-8">
+            Innovative strategies and services to achieve DTC sales growth and
+            customer engagement.
+          </p>
+          <a
+            href="https://calendly.com/simons-dtc/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block font-body-bold bg-navy text-white px-8 py-3 text-base border border-navy-dark hover:bg-white hover:text-navy-dark transition-colors"
+          >
+            Book A Consultation
+          </a>
         </div>
       </section>
 
-      {/* Value Proposition */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-wine-900 mb-4">
-              Built on Experience. Driven by Results.
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Over 27 years of wine industry expertise, translating into measurable DTC growth for your winery.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 bg-wine-50 rounded-lg">
-              <div className="text-wine-700 mb-4">
-                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-wine-900 mb-3">Double-Digit Growth</h3>
-              <p className="text-gray-700">
-                Proven strategies that have consistently delivered significant sales increases for premium wineries.
-              </p>
-            </div>
-
-            <div className="p-8 bg-wine-50 rounded-lg">
-              <div className="text-wine-700 mb-4">
-                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-wine-900 mb-3">Certified Expertise</h3>
-              <p className="text-gray-700">
-                Led by a Certified Sommelier with deep experience at distinguished Napa wineries.
-              </p>
-            </div>
-
-            <div className="p-8 bg-wine-50 rounded-lg">
-              <div className="text-wine-700 mb-4">
-                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-wine-900 mb-3">Full-Stack Solutions</h3>
-              <p className="text-gray-700">
-                From technology implementation to club strategy, hospitality planning to email marketing.
-              </p>
-            </div>
-          </div>
+      {/* Services Grid Section */}
+      <section className="bg-navy py-12">
+        <div className="max-w-site mx-auto px-4">
+          <p className="font-body text-white text-center text-lg mb-10 tracking-wide">
+            Innovative strategies and services to achieve DTC sales growth and
+            customer engagement.
+          </p>
         </div>
       </section>
 
-      {/* Services Preview */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-wine-900 mb-12 text-center">
-            Comprehensive DTC Services
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {[
-              'Fractional DTC Leadership',
-              'Club Processing & Strategy',
-              'Metrics & Analytics',
-              'eCommerce Platform Migration',
-              'Email Marketing',
-              'Customer Journey Mapping',
-              'Hospitality Planning',
-              'Staff Training',
-              'SMS Messaging',
-            ].map((service) => (
-              <div key={service} className="bg-white p-6 rounded-lg border border-gray-200 hover:border-wine-300 transition-colors">
-                <h3 className="font-semibold text-wine-900">{service}</h3>
-              </div>
-            ))}
+      <section className="bg-white py-12">
+        <div className="max-w-site mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            {/* Column 1 */}
+            <div className="space-y-2">
+              {servicesCol1.map((s) => (
+                <p key={s} className="font-body text-base leading-relaxed">
+                  {s}
+                </p>
+              ))}
+            </div>
+            {/* Column 2 */}
+            <div className="space-y-2">
+              {servicesCol2.map((s) => (
+                <p key={s} className="font-body text-base leading-relaxed">
+                  {s}
+                </p>
+              ))}
+            </div>
+            {/* Column 3 */}
+            <div className="space-y-2">
+              {servicesCol3.map((s) => (
+                <p key={s} className="font-body text-base leading-relaxed">
+                  {s}
+                </p>
+              ))}
+            </div>
           </div>
 
-          <div className="text-center">
+          {/* More Info button */}
+          <div className="text-center mt-10">
             <Link
               href="/services"
-              className="inline-block bg-wine-700 text-white px-8 py-4 rounded-md hover:bg-wine-800 transition-colors font-medium"
+              className="inline-block font-body-bold bg-navy text-white px-8 py-3 text-base border border-navy-dark hover:bg-white hover:text-navy-dark transition-colors"
             >
-              View All Services
+              More Info
             </Link>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-wine-900 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-            Ready to Grow Your DTC Sales?
+      {/* Contact Form Section */}
+      <section id="contact" className="relative py-20">
+        {/* Background image with overlay */}
+        <Image
+          src="/images/contact-bg.jpg"
+          alt="Grapes"
+          fill
+          className="object-cover opacity-45"
+        />
+        <div className="absolute inset-0 bg-white/60" />
+
+        <div className="relative z-10 max-w-site mx-auto px-4">
+          <h2 className="font-heading text-[30px] font-bold text-center mb-10 tracking-wide">
+            CONTACT
           </h2>
-          <p className="text-xl text-wine-200 mb-8">
-            Let's discuss how we can help elevate your winery's direct-to-consumer strategy.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-white text-wine-900 px-8 py-4 rounded-md hover:bg-wine-50 transition-colors font-medium"
+
+          <form
+            className="max-w-lg mx-auto space-y-4"
+            action="https://formspree.io/f/placeholder"
+            method="POST"
           >
-            Schedule a Consultation
-          </Link>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="sr-only" htmlFor="firstName">
+                  First Name
+                </label>
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  placeholder="First Name *"
+                  required
+                  className="w-full font-body border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-navy"
+                />
+              </div>
+              <div>
+                <label className="sr-only" htmlFor="lastName">
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Last Name *"
+                  required
+                  className="w-full font-body border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-navy"
+                />
+              </div>
+            </div>
+            <div>
+              <label className="sr-only" htmlFor="email">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email *"
+                required
+                className="w-full font-body border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-navy"
+              />
+            </div>
+            <div>
+              <label className="sr-only" htmlFor="company">
+                Company
+              </label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="Company *"
+                required
+                className="w-full font-body border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-navy"
+              />
+            </div>
+            <div>
+              <label className="sr-only" htmlFor="message">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Message *"
+                required
+                rows={5}
+                className="w-full font-body border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-navy resize-none"
+              />
+            </div>
+            <div className="text-center">
+              <button
+                type="submit"
+                className="font-body-bold bg-navy text-white px-10 py-2.5 text-base border border-navy-dark hover:bg-white hover:text-navy-dark transition-colors"
+              >
+                Send
+              </button>
+            </div>
+          </form>
         </div>
       </section>
     </div>
